@@ -38,7 +38,7 @@ struct AProc
     std::string Photo()
     {
         std::ostringstream ost ;
-        ost<<"---\t"<<curr_time<<"\t---\n";
+        ost<<"---\tTouch report\t"<<curr_time<<"\t---\n";
         ost<<"pid\t"<<pid<<'\n';
         ost<<"CPU\t"<<CPU_curr<<'\n';
         ost<<"MEM\t"<<Mem_curr;
@@ -241,8 +241,8 @@ int main( int argc , char **argv )
         std::cerr<<"Usage   :   "<< std::endl;
         std::cerr<<"    to monitor exsit pgid , use "<<argv[0]<<" pgid pgid_num_to_monitor "<< std::endl;
         std::cerr<<"        example     :   "<<argv[0]<<" pgid 100"<< std::endl;
-        std::cerr<<"    to start a new command adn monitor it , use "<<argv[0]<<" file_to run  args_list"<< std::endl;
-        std::cerr<<"        example     :   "<<argv[0]<<" /bin/ls ./"<< std::endl;
+        std::cerr<<"    to start a new command and monitor it , use "<<argv[0]<<" file_to_run args_list"<< std::endl;
+        std::cerr<<"        example     :   "<<argv[0]<<" ./test.sh 10 "<< std::endl;
         return 1 ;
     }
     if( std::string(argv[1]) == "pgid" )
