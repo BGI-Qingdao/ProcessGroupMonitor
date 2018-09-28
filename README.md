@@ -32,12 +32,14 @@ and monitor it . you can simplely run :
 
 #### PGM will generate a log file for each process . 
 
-* the name of log file is : cmd + pid + start_time .
+* the name of log file is : pglog _ cmd _ pid _ starttime .
 
 * any charactor in cmd that both not a digit and 
             not a alphabet will become a '_' :
 
-like __share_app_bwa_0_7_12_bwa_index_chr19_standard_contig__206046_1538103905
+example :
+
+    pglog__share_app_bwa_0_7_12_bwa_index_chr19_standard_contig__206046_1538103905
 
 #### To get the overview of a finsihed process , use 
 

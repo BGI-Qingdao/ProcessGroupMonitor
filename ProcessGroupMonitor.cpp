@@ -92,7 +92,7 @@ struct AProc
             else
                 path += '_';
         }
-        std::string file_name = path +"_"+ std::to_string(pid)+"_"+std::to_string(curr_time);
+        std::string file_name =std::string("pglog_")+ path +"_"+ std::to_string(pid)+"_"+std::to_string(curr_time);
         std::cerr<<" start of "<<pid<<" cmd "<<cmd<<" into file "<<file_name<<std::endl;
         ofs = new std::ofstream(file_name);
         (*ofs)<<InitReport()<<std::endl;
