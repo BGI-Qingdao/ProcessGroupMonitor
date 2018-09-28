@@ -20,7 +20,7 @@ A sample tool to monitor a process group and log it CPU and MEM used.
     use ./PGM file_to_run  args_list
 
         example , if you want to run 
-        > ./test.sh 10 
+        > ./test.sh 10  # this test.sh need 1 parameter 
         and monitor it . you can simplely run :
         > ./PGM ./test.sh 10
 
