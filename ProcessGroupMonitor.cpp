@@ -87,7 +87,7 @@ struct AProc
         std::string path ;
         for(char c : cmd_full)
         {
-            if( std::isalpha(c) )
+            if( std::isalpha(c) || std::isdigit(c) )
                 path += c;
             else
                 path += '_';
