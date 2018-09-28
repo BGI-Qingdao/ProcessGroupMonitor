@@ -49,10 +49,20 @@ struct AProc
     {
         std::ostringstream ost ;
         ost<<"###\tFinal report\t"<<curr_time<<"\t###\n";
+        ost<<"cmd "<<cmd_full<<'\n';
         ost<<"pid\t"<<pid<<'\n';
         ost<<"CPU_max\t"<<CPU_max<<'\n';
         ost<<"MEM_max\t"<<Mem_max<<'\n';
         ost<<"TIME\t"<<curr_time-start_time<<" seconds";
+        return ost.str();
+    }
+    std::string InitReport()
+    {
+        std::ostringstream ost ;
+        ost<<"###\tInit report\t"<<curr_time<<"\t###\n";
+        ost<<"cmd "<<cmd_full<<'\n';
+        ost<<"pid\t"<<pid<<'\n';
+        ost<<"TIME\t"<<start_time<<" seconds";
         return ost.str();
     }
     public:
@@ -75,7 +85,7 @@ struct AProc
         Mem_max = 0 ;
         touched = false ;
         std::string path ;
-        for(char c : cmd)
+        for(char c : cmd_full)
         {
             if( std::isalpha(c) )
                 path += c;
@@ -85,6 +95,7 @@ struct AProc
         std::string file_name = path +"_"+ std::to_string(pid)+"_"+std::to_string(curr_time);
         std::cerr<<" start of "<<pid<<" cmd "<<cmd<<" into file "<<file_name<<std::endl;
         ofs = new std::ofstream(file_name);
+        (*ofs)<<InitReport()<<std::endl;
     }
 
     void Touch(float CPU , long MEM ,long MEM_Max, long time_steamp )

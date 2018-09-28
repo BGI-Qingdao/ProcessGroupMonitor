@@ -1,7 +1,7 @@
 .PHONY: clean
 
-PGM:
-	g++ ProcessGroupMonitor.cpp -o PGM 
+PGM: clean
+	g++ -std=c++11 ProcessGroupMonitor.cpp -o PGM 
 
 clean:
 	rm PGM
