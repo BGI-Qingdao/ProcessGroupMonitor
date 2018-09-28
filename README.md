@@ -13,7 +13,7 @@ A sample tool to monitor a process group and log it CPU and MEM used.
 
     use ./PGM pgid pgid_num_to_monitor
         example  , if pgid is 100   :
-    >        ./PGM pgid 100
+        > ./PGM pgid 100
 
 ### TO start a new command and monitor it 
 
