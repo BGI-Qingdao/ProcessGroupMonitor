@@ -1,6 +1,6 @@
 # ProcessGroupMonitor
 
-A sample tool to monitor a process group and log it CPU and MEM used.
+A sample tool to monitor a process group and log it CPU , MEM and time cost.
 
 ## INSTALL
 
