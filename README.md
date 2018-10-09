@@ -9,22 +9,22 @@ A simple tool to monitor a process group and record its CPU, MEM and time usage.
 
 ## USAGE 
 
-### To monitor a running process group 
+### Monitor a running process group 
 
 ./PGM pgid [pgid_num_to_monitor]
 
-for example, if pgid is 100:
+For example, if pgid is 100:
 
 > ./PGM pgid 100
 
-### To start a new command and monitor it 
+### Start a new command and monitor it 
 
 ./PGM file_to_run  args_list
-for example, if you want to run 
+For example, if you want to run 
 
 > ./test.sh 10  # this test.sh needs 1 parameter 
 
-and monitor it, then you can simply run:
+and monitor its CPU, MEM and time usage, then you can simply run:
 
 > ./PGM ./test.sh 10
 
@@ -35,15 +35,15 @@ and monitor it, then you can simply run:
 * the name of log file : cmd + pid + start_time .
 
 * any character in cmd that is neither a digit nor
-  an alphabet will become a '_' .
+  an alphabet will become a '_' like:
 
-like __share_app_bwa_0_7_12_bwa_index_chr19_standard_contig__206046_1538103905
+> __share_app_bwa_0_7_12_bwa_index_chr19_standard_contig__206046_1538103905
 
 #### To get the overview of a complete process, use 
 
 > tail -n 6 your_log_file_name 
 
-you will get a report like 
+You will get a report like 
 
              ###     Final report    1538103946      ###
              cmd  /share/app/bwa-0.7.12/bwa index chr19_standard.contig
@@ -53,10 +53,10 @@ you will get a report like
              TIME    41 seconds
 
 
-if you want more information other than just a simple report, then you can read the whole log file and get information for each snapshot.
+If you want more information other than just a simple report, then you can read the whole log file and get information for each snapshot.
 
 ### Snapshot frequency
             
 The default value is 5 seconds per snapshot.
 
-if a different frequency is desired, then you can try to modify the codes of sleep function.
+If a different frequency is desired, then you can try to modify the codes of sleep function.
