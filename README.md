@@ -1,49 +1,49 @@
 # ProcessGroupMonitor
 
-A sample tool to monitor a process group and log it CPU , MEM and time cost.
+A simple tool to monitor a process group and record its CPU, MEM and time usage.
 
 ## INSTALL
 
-    > make          #to make PGM
+    > make          # to make PGM
     > make clean    # to remove PGM
 
 ## USAGE 
 
-### TO monitor exsit progess group 
+### To monitor a running process group 
 
-use ./PGM pgid pgid_num_to_monitor
+./PGM pgid [pgid_num_to_monitor]
 
-example  , if pgid is 100   :
+for example, if pgid is 100:
 
 > ./PGM pgid 100
 
-### TO start a new command and monitor it 
+### To start a new command and monitor it 
 
-use ./PGM file_to_run  args_list
-example , if you want to run 
+./PGM file_to_run  args_list
+for example, if you want to run 
 
-> ./test.sh 10  # this test.sh need 1 parameter 
+> ./test.sh 10  # this test.sh needs 1 parameter 
 
-and monitor it . you can simplely run :
+and monitor it, then you can simply run:
 
 > ./PGM ./test.sh 10
 
 ### Output
 
-#### PGM will generate a log file for each process . 
+#### PGM will generate a log file for each process. 
 
-* the name of log file is : cmd + pid + start_time .
+* the name of log file : cmd + pid + start_time .
 
-* any charactor in cmd that both not a digit and 
-            not a alphabet will become a '_' :
+* any character in cmd that is neither a digit nor
+  an alphabet will become a '_' .
 
 like __share_app_bwa_0_7_12_bwa_index_chr19_standard_contig__206046_1538103905
 
-#### To get the overview of a finsihed process , use 
+#### To get the overview of a complete process, use 
 
 > tail -n 6 your_log_file_name 
 
-and you will get a report like 
+you will get a report like 
 
              ###     Final report    1538103946      ###
              cmd  /share/app/bwa-0.7.12/bwa index chr19_standard.contig
@@ -53,10 +53,10 @@ and you will get a report like
              TIME    41 seconds
 
 
-if you want to more than just a report , you can  read the whole log file and get information for each snapshot .
+if you want more information other than just a simple report, then you can read the whole log file and get information for each snapshot.
 
-### Snapshot frequrency
+### Snapshot frequency
             
-default is 5 seconds a snapshot .
+The default value is 5 seconds per snapshot.
 
-if you need another frequrency , modify the code of sleep function.
+if a different frequency is desired, then you can try to modify the codes of sleep function.
