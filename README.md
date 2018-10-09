@@ -20,6 +20,7 @@ For example, if pgid is 100:
 ### Start a new command and monitor it 
 
 ./PGM file_to_run  args_list
+
 For example, if you want to run 
 
 > ./test.sh 10  # this test.sh needs 1 parameter 
