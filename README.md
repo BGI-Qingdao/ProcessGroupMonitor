@@ -17,6 +17,10 @@ For example, if pgid is 100:
 
 > ./PGM pgid 100
 
+Note that you can use the following command to find the pgid for XXX
+
+> ps -A -o stat,pid,pgid,cmd | grep XXX
+
 ### Start a new command and monitor it 
 
 ./PGM file_to_run  args_list
