@@ -85,7 +85,7 @@ struct AProc
         Mem_max = 0 ;
         touched = false ;
         std::string path ;
-        for(char c : cmd_full)
+        for(char c : cmd)
         {
             if( std::isalpha(c) || std::isdigit(c) )
                 path += c;
@@ -93,6 +93,8 @@ struct AProc
                 path += '_';
         }
         std::string file_name =std::string("pglog_")+ path +"_"+ std::to_string(pid)+"_"+std::to_string(curr_time);
+        if(file_name.size() > 200 )
+            file_name = file_name.substr(0,200);
         std::cerr<<" start of "<<pid<<" cmd "<<cmd<<" into file "<<file_name<<std::endl;
         ofs = new std::ofstream(file_name);
         (*ofs)<<InitReport()<<std::endl;
@@ -120,7 +122,7 @@ struct AProc
 
 bool GetProcInfo(int pid, float & CPU , long & MEM , long & MEM_Max)
 {
-    std::string cmd = std::string("ps ux | grep ")+std::to_string(pid)+" | grep -v grep";
+    std::string cmd = std::string("ps aux | grep ")+std::to_string(pid)+" | grep -v grep";
     //root      2112  5.2  1.9 2927056 169380 ?      Sl   Sep25 148:36 /usr/bin/kwin_x11
     FILE * pp ;
     if( (pp = popen(cmd.c_str(), "r")) == NULL )
