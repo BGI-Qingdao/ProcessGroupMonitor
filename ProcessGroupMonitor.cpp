@@ -85,16 +85,16 @@ struct AProc
         Mem_max = 0 ;
         touched = false ;
         std::string path ;
-        for(char c : cmd)
+        for(char c : cmd_full)
         {
             if( std::isalpha(c) || std::isdigit(c) )
                 path += c;
             else
                 path += '_';
         }
+        if(path.size() > 150 )
+            path= path.substr(0,150);
         std::string file_name =std::string("pglog_")+ path +"_"+ std::to_string(pid)+"_"+std::to_string(curr_time);
-        if(file_name.size() > 200 )
-            file_name = file_name.substr(0,200);
         std::cerr<<" start of "<<pid<<" cmd "<<cmd<<" into file "<<file_name<<std::endl;
         ofs = new std::ofstream(file_name);
         (*ofs)<<InitReport()<<std::endl;
