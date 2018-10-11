@@ -233,7 +233,7 @@ void monitor_pgid(int pgid , int pid_self)
             std::string pgid_str = std::to_string(pgid1);
             std::string cmd_buffer1 = std::string(buf);
             std::string cmd = std::string (exec_file);
-            std::string cmd_full = cmd_buffer1.substr(cmd_buffer1.find_last_of(pgid_str)+pgid_str.size());
+            std::string cmd_full = cmd_buffer1.substr(cmd_buffer1.find_last_of(pgid_str)+1);
             if ( cmd_full[cmd_full.size()-1] == '\n' ) cmd_full[cmd_full.size()-1] = ' ';
             if( pgdata.Touch(pid1,cmd,cmd_full) )
             {
