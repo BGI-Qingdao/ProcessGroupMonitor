@@ -46,6 +46,19 @@ and monitor its CPU, MEM and time usage, then you can simply run:
 
 #### To get the overview of a complete process, use 
 
+> report.sh
+
+You will get a report like 
+
+```
+Total report begin ==========
+MEM_max   327149736    KB.
+CPU_max   1443    threads.
+TIME      327149736    seconds.
+Total report end ==========
+```
+Or if your want check a specific command :
+
 > tail -n 6 your_log_file_name 
 
 You will get a report like 
