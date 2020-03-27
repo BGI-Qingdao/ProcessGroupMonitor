@@ -53,7 +53,7 @@ struct AProc
         ost<<"pid\t"<<pid<<'\n';
         ost<<"CPU_max\t"<<CPU_max<<'\n';
         ost<<"MEM_max\t"<<Mem_max<<'\n';
-        ost<<"TIME\t"<<curr_time-start_time<<" seconds";
+        ost<<"TIME_total\t"<<curr_time-start_time<<" seconds";
         return ost.str();
     }
     std::string InitReport()
