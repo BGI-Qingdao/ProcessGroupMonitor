@@ -314,7 +314,7 @@ int main( int argc , char **argv )
     }
     if (child_pid > 0) {    // Monitor process 
         monitor_pgid(pid,pid);
-        delete []argv_new ;
+        //delete []argv_new ;
         wait(NULL);
         return 0 ;
     }
