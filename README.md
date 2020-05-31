@@ -44,6 +44,34 @@ and monitor its CPU, MEM and time usage, then you can simply run:
 
 > __share_app_bwa_0_7_12_bwa_index_chr19_standard_contig__206046_1538103905
 
+#### To get a detail and accurate data for all subcommand
+
+```
+./detail_report.sh pglog_*
+```
+
+The report looks like
+
+```
+----------------------------
+log_file: pglog_xxx
+cmd 14994 classify --hap paternal.unique.filter.mer --hap maternal.unique.filter.mer --thread 30 --read rel3-nanopore-wgs.fastq --format fastq
+MEM_max 21823048 KB
+CPU_max 2782
+real_time 5435 seconds
+cpu_time 130997 seconds
+----------------------------
+
+----------------------------
+log_file: pglog_14994_awk__print__2___83594_1590736593
+cmd 14994 awk {print $2}
+MEM_max 9936 KB
+CPU_max 45.8
+real_time 7 seconds
+cpu_time 3.185 seconds
+----------------------------
+```
+
 #### To get the overview of a complete process, use 
 
 > report.sh
