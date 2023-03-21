@@ -41,7 +41,8 @@ struct AProc
         ost<<"---\tTouch report\t"<<curr_time<<"\t---\n";
         ost<<"pid\t"<<pid<<'\n';
         ost<<"CPU\t"<<CPU_curr<<'\n';
-        ost<<"MEM\t"<<Mem_curr;
+        ost<<"MEM\t"<<Mem_curr<<'\n';
+        ost<<"DataFrame>>\t"<<pid<<'\t'<<curr_time<<'\t'<<CPU_curr<<'\t'<<Mem_curr;
         return ost.str();
     }
 
